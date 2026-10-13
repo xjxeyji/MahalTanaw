@@ -1,0 +1,90 @@
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <div class="login-wrapper">
+    <div class="sky-glow"></div>
+
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+      <button type="button" (click)="goBack()" class="back-btn" aria-label="Back">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <div class="app-chip">
+        <span class="chip-dot"></span>
+        <span class="chip-text">MahalTanaw Explorer</span>
+      </div>
+
+      <div class="spacer"></div>
+    </div>
+
+    <!-- Center Form Card -->
+    <div class="card-container">
+      <div class="brand-header">
+        <span class="mode-badge">AUTHENTICATION</span>
+        <h1 class="brand-title">Welcome Back!</h1>
+        <p class="brand-subtitle">
+          Mag-log in upang ipagpatuloy ang iyong pagtuklas sa Oriental Mindoro.
+        </p>
+      </div>
+
+      <!-- Login Form Card -->
+      <form (submit)="onLogin()" class="auth-card">
+        
+        <!-- Email Field -->
+        <div class="input-group">
+          <label class="input-label">Email Address</label>
+          <input 
+            type="email" 
+            [(ngModel)]="email" 
+            name="email"
+            placeholder="pangalan@email.com" 
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Password Field -->
+        <div class="input-group">
+          <label class="input-label">Password</label>
+          <input 
+            type="password" 
+            [(ngModel)]="password" 
+            name="password"
+            placeholder="••••••••" 
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Forgot Password Link -->
+        <div class="forgot-wrapper">
+          <button type="button" class="forgot-btn">
+            Nakalimutan ang password?
+          </button>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+          <span>Mag-log in</span>
+        </button>
+
+        <!-- Redirect to Register Link -->
+        <div class="toggle-wrapper">
+          <p class="toggle-text">
+            Wala ka pa bang account?
+            <button type="button" (click)="goToRegister()" class="toggle-btn">
+              Mag-sign Up dito
+            </button>
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-text">
+      Oriental Mindoro Tourism Explorer &copy; 2026
+    </div>
+  </div>
+</ion-content>

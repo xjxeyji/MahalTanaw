@@ -1,20 +1,75 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="landing-content">
+  <!-- Atmospheric Background & Travel Decorative Elements -->
+  <div class="sky-ocean-backdrop">
+    <!-- Subtle Clouds -->
+    <div class="cloud cloud-top-left"></div>
+    <div class="cloud cloud-mid-right"></div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <!-- Flight / Trajectory SVG Paths with Paper Planes & Compass -->
+    <svg class="travel-routes-svg" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Curved Flight Path -->
+      <path d="M-20,120 C80,60 220,100 320,140 C370,160 410,210 360,250 C290,290 100,280 20,400 C-30,480 80,620 380,720" stroke="rgba(255, 255, 255, 0.28)" stroke-width="1.5" stroke-dasharray="5 5" />
+      
+      <!-- Waypoint route dots -->
+      <circle cx="70" cy="295" r="3.5" fill="rgba(255, 255, 255, 0.45)" />
+      <circle cx="240" cy="540" r="3.5" fill="rgba(255, 255, 255, 0.45)" />
+      <circle cx="190" cy="730" r="2.5" fill="rgba(255, 255, 255, 0.35)" />
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <!-- Nautical Compass Rose (Right side) -->
+      <g transform="translate(290, 360)" opacity="0.32" stroke="white" stroke-width="1.2">
+        <circle cx="20" cy="20" r="24" stroke-dasharray="3 3" fill="none" />
+        <circle cx="20" cy="20" r="14" fill="none" />
+        <line x1="20" y1="-8" x2="20" y2="48" />
+        <line x1="-8" y1="20" x2="48" y2="20" />
+        <polygon points="20,2 24,16 20,20 16,16" fill="white" />
+        <text x="20" y="-11" fill="white" font-size="8" text-anchor="middle" font-weight="bold">N</text>
+      </g>
+    </svg>
+
+    <!-- Geographic Coordinates & Location Pin (Left side) -->
+    <div class="geo-pin-indicator">
+      <ion-icon name="location-outline" class="pin-icon"></ion-icon>
+      <div class="coordinates-text">
+        <span>13.52° N</span>
+        <span>120.95° E</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Center Content -->
+  <div class="landing-container">
+    <div class="center-branding">
+      <!-- Tagline / Subtitle -->
+      <p class="eyebrow-text">
+        DISCOVER <span class="dot">•</span> ORIENTAL MINDORO
+      </p>
+
+      <!-- Handwritten / Script Logo -->
+      <h1 class="brand-title">MahalTanaw</h1>
+      <p class="brand-tagline">Your Tour Guide</p>
+
+      <!-- Wave Accent SVG -->
+      <svg class="wave-accent" viewBox="0 0 100 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2,6 Q 25,-2 50,6 T 98,6" stroke="rgba(255,255,255,0.85)" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Tour Pill Action Button (Dadalhin ka sa login) -->
+      <button class="tour-btn" (click)="onStartTour()">
+        <ion-icon name="compass" class="tour-icon"></ion-icon>
+        <span>TOUR</span>
+      </button>
+    </div>
+
+    <!-- Bottom Destination Showcase -->
+    <div class="bottom-destination-info">
+      <h2 class="destination-name">MaHalTaNa, Oriental Mindoro</h2>
+      <p class="destination-meta">
+        <span>Oriental Mindoro</span>
+        <span class="bullet">•</span>
+        <span>Coastal Haven</span>
+        <span class="bullet">•</span>
+        <span>Top Rated</span>
+      </p>
+    </div>
   </div>
 </ion-content>

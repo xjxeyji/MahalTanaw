@@ -1,0 +1,109 @@
+<ion-content [fullscreen]="true" class="ion-no-padding">
+  <div class="register-wrapper">
+    <div class="sky-glow"></div>
+
+    <!-- Top Navigation Bar -->
+     <div class="top-nav">
+      <button type="button" (click)="goBack()" class="back-btn" aria-label="Back">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <div class="app-chip">
+        <span class="chip-dot"></span>
+        <span class="chip-text">MahalTanaw Explorer</span>
+      </div>
+
+      <div class="spacer"></div>
+    </div>
+
+    <!-- Center Form Card -->
+    <div class="card-container">
+      <div class="brand-header">
+        <span class="mode-badge">REGISTRATION</span>
+        <h1 class="brand-title">Join MahalTanaw</h1>
+        <p class="brand-subtitle">
+          Gumawa ng account para simulan ang iyong isla adventure sa Oriental Mindoro.
+        </p>
+      </div>
+
+      <!-- Registration Form Card -->
+      <form (submit)="onRegister()" class="auth-card">
+        
+        <!-- Full Name Field -->
+        <div class="input-group">
+          <label class="input-label">Buong Pangalan</label>
+          <input 
+            type="text" 
+            [(ngModel)]="fullName" 
+            name="fullName"
+            placeholder="Juan Dela Cruz" 
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Email Field -->
+        <div class="input-group">
+          <label class="input-label">Email Address</label>
+          <input 
+            type="email" 
+            [(ngModel)]="email" 
+            name="email"
+            placeholder="pangalan@email.com" 
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Password Field -->
+        <div class="input-group">
+          <label class="input-label">Password</label>
+          <input 
+            type="password" 
+            [(ngModel)]="password" 
+            name="password"
+            placeholder="••••••••" 
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Confirm Password Field -->
+        <div class="input-group">
+          <label class="input-label">Kumpirmahin ang Password</label>
+          <input 
+            type="password" 
+            [(ngModel)]="confirmPassword" 
+            name="confirmPassword"
+            placeholder="••••••••" 
+            required
+            class="custom-input"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+          <span>Mag-sign Up</span>
+        </button>
+
+        <!-- Redirect to Login Link -->
+        <div class="toggle-wrapper">
+          <p class="toggle-text">
+            Mayroon ka na bang account?
+            <button type="button" (click)="goToLogin()" class="toggle-btn">
+              Mag-log in
+            </button>
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-text">
+      Oriental Mindoro Tourism Explorer &copy; 2026
+    </div>
+  </div>
+</ion-content>
